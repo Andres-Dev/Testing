@@ -5,7 +5,7 @@ function SubmitsEncry() {
             var txtUserName = "{user:andres, psw:Passwordencrypt}";
 
             var key = CryptoJS.enc.Utf8.parse('8080808080808080');
-            var iv = CryptoJS.enc.Utf8.parse('key test');//CryptoJS.lib.WordArray.random(16);
+            var iv = CryptoJS.enc.Utf8.parse('key testfrewaafedf ');//CryptoJS.lib.WordArray.random(16);
 
             var encrypted = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(txtUserName), key,
             {
