@@ -1,0 +1,41 @@
+//test merge
+
+function SubmitsEncry() {
+
+            var txtUserName = "{user:andres, psw:Passwordencrypt}";
+
+            var key = CryptoJS.enc.Utf8.parse('8080808080808080');
+            var iv = CryptoJS.enc.Utf8.parse('8080808080808080');//CryptoJS.lib.WordArray.random(16);
+
+            var encrypted = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(txtUserName), key,
+            {
+                keySize: 128 / 8,
+                iv: iv,
+                mode: CryptoJS.mode.CBC,
+                padding: CryptoJS.pad.Pkcs7
+            });
+            
+            console.log(encrypted.toString());
+            var decrypted = CryptoJS.AES.decrypt(encrypted, key,
+               {
+                   keySize: 128 / 8,
+                   iv: iv,
+                   mode: CryptoJS.mode.CBC,
+                   padding: CryptoJS.pad.Pkcs7
+               });
+            var res_enc= (decrypted.toString(CryptoJS.enc.Utf8));
+            return res_enc;
+        }
+        var iv2 = SubmitsEncry()
+        var encrypted = SubmitsEncry();
+        var key = CryptoJS.enc.Utf8.parse('8080808080808080');
+        
+        var decrypted = CryptoJS.AES.decrypt(encrypted, key,
+               {
+                   keySize: 128 / 8,
+                   iv: CryptoJS.enc.Utf8.parse('8080808080808080'),
+                   mode: CryptoJS.mode.CBC,
+                   padding: CryptoJS.pad.Pkcs7
+               });
+            var res_enc= (decrypted.toString());
+            console.log(res_enc)
