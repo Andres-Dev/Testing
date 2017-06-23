@@ -6,7 +6,8 @@ function SubmitsEncry() {
 
             var key = CryptoJS.enc.Utf8.parse('8080808080808080');
             var iv = CryptoJS.enc.Utf8.parse('key testfrewaafedf ');//CryptoJS.lib.WordArray.random(16);
-
+            //agregando 2 linea antes de obtener
+            console.log("agregado console")
             var encrypted = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(txtUserName), key,
             {
                 keySize: 128 / 8,
